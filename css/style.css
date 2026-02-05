@@ -52,3 +52,13 @@ footer {
   padding: 20px;
   background: #222;
 }
+
+footer a {
+  color: #ffd700;       /* złoty kolor linków */
+  text-decoration: none; /* brak podkreślenia */
+  margin: 0 10px;
+}
+
+footer a:hover {
+  text-decoration: underline; /* podkreślenie przy najechaniu */
+}
