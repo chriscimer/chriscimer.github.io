@@ -65,9 +65,11 @@ img {
 }
 
 .hero-text {
-  background: rgba(0, 0, 0, 0.5); /* czarny półprzezroczysty */
-  padding: 20px;
-  display: inline-block;
+  position: absolute;
+  bottom: 80px;
+  left: 80px;
+  max-width: 520px;
+  color: #ffffff;
 }
 
 .hero-text h1 {
