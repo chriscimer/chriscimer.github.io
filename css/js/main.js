@@ -1,36 +1,63 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  const modal = document.getElementById("modal");
-  const modalContent = modal.querySelector(".modal-content");
-  const closeBtn = modal.querySelector(".close");
+const modal = document.getElementById("modal");
+const modalContent = document.querySelector(".modal-content");
+const closeBtn = document.querySelector(".close");
+const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".prev");
 
-  const images = document.querySelectorAll(".gallery img[data-series]");
+let currentImages = [];
+let currentIndex = 0;
 
-  images.forEach(img => {
-    img.addEventListener("click", () => {
-      const series = img.dataset.series;
+// klik na zdjęcie portfolio
+document.querySelectorAll("#portfolio .gallery img").forEach((img, index) => {
+  img.addEventListener("click", () => {
+    const series = img.dataset.series;
 
-      modalContent.innerHTML = "";
+    currentImages = Array.from(
+      document.querySelectorAll(
+        `#portfolio .gallery img[data-series="${series}"]`
+      )
+    ).map(el => el.src);
 
-      document
-        .querySelectorAll(`.gallery img[data-series="${series}"]`)
-        .forEach(item => {
-          const clone = item.cloneNode(true);
-          modalContent.appendChild(clone);
-        });
-
-      modal.classList.add("active");
-    });
+    currentIndex = currentImages.indexOf(img.src);
+    openModal();
   });
+});
 
-  closeBtn.addEventListener("click", () => {
-    modal.classList.remove("active");
-  });
+function openModal() {
+  modalContent.innerHTML = "";
+  const image = document.createElement("img");
+  image.src = currentImages[currentIndex];
+  modalContent.appendChild(image);
+  modal.classList.add("active");
+}
 
-  modal.addEventListener("click", e => {
-    if (e.target === modal) {
-      modal.classList.remove("active");
-    }
-  });
+function showNext() {
+  currentIndex = (currentIndex + 1) % currentImages.length;
+  openModal();
+}
 
+function showPrev() {
+  currentIndex =
+    (currentIndex - 1 + currentImages.length) % currentImages.length;
+  openModal();
+}
+
+nextBtn.addEventListener("click", showNext);
+prevBtn.addEventListener("click", showPrev);
+
+closeBtn.addEventListener("click", () => {
+  modal.classList.remove("active");
+});
+
+modal.addEventListener("click", e => {
+  if (e.target === modal) modal.classList.remove("active");
+});
+
+document.addEventListener("keydown", e => {
+  if (!modal.classList.contains("active")) return;
+  if (e.key === "ArrowRight") showNext();
+  if (e.key === "ArrowLeft") showPrev();
+  if (e.key === "Escape") modal.classList.remove("active");
 });
