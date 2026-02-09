@@ -28,14 +28,10 @@ img {
 }
 
 /* LOGO SVG */
-.logo {
-  display: flex;
-  align-items: center;
-}
-
 .logo-svg {
   width: 260px;
   height: auto;
+  display: block;
 }
 
 .logo-name {
