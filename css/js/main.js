@@ -61,24 +61,24 @@ document.addEventListener("keydown", e => {
   if (e.key === "Escape") modal.classList.remove("active");
 });
 <div style="display:none;">
-  <!-- Seria kuchni 1 -->
-  <img src="./images/kitchen1_2.jpg" data-series="kitchen1">
-  <img src="./images/kitchen1_3.jpg" data-series="kitchen1">
-  <img src="./images/kitchen1_4.jpg" data-series="kitchen1">
+  <!-- Seria livingroom1 -->
+  <img src="./images/kitchen1_2.jpg" data-series="livingroom1">
+  <img src="./images/kitchen1_3.jpg" data-series="livingroom1">
+  <img src="./images/kitchen1_4.jpg" data-series="livingroom1">
 
-  <!-- Seria kuchni 2 -->
-  <img src="./images/kitchen2_2.jpg" data-series="kitchen2">
-  <img src="./images/kitchen2_3.jpg" data-series="kitchen2">
-  <img src="./images/kitchen2_4.jpg" data-series="kitchen2">
+  <!-- Seria kitchen01 -->
+  <img src="./images/kitchen2_2.jpg" data-series="kitchen01">
+  <img src="./images/kitchen2_3.jpg" data-series="kitchen01">
+  <img src="./images/kitchen2_4.jpg" data-series="kitchen01">
   
-  <!-- Seria kuchni 3 -->
-  <img src="./images/kitchen1_2.jpg" data-series="kitchen1">
-  <img src="./images/kitchen1_3.jpg" data-series="kitchen1">
-  <img src="./images/kitchen1_4.jpg" data-series="kitchen1">
+  <!-- Seria kitchen04 -->
+  <img src="./images/kitchen1_2.jpg" data-series="kitchen04">
+  <img src="./images/kitchen1_3.jpg" data-series="kitchen04">
+  <img src="./images/kitchen1_4.jpg" data-series="kitchen04">
 
-  <!-- Seria kuchni 4 -->
-  <img src="./images/kitchen2_2.jpg" data-series="kitchen2">
-  <img src="./images/kitchen2_3.jpg" data-series="kitchen2">
-  <img src="./images/kitchen2_4.jpg" data-series="kitchen2">
+  <!-- Seria kitchen03 -->
+  <img src="./images/kitchen2_2.jpg" data-series="kitchen03">
+  <img src="./images/kitchen2_3.jpg" data-series="kitchen03">
+  <img src="./images/kitchen2_4.jpg" data-series="kitchen03">
 </div>
   });
