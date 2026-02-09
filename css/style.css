@@ -38,8 +38,6 @@ img {
 
 .logo-svg {
   width: 220px;
-  max-width: 100%;
-  height: auto;
 }
 
 .tagline {
@@ -51,7 +49,6 @@ img {
 .main-nav {
   display: flex;
   gap: 40px;
-  flex-wrap: wrap;
   justify-content: center;
 }
 
@@ -60,7 +57,6 @@ img {
   color: #1c1c1c;
   font-size: 14px;
   letter-spacing: 1px;
-  transition: opacity 0.2s ease;
 }
 
 .main-nav a:hover {
@@ -94,16 +90,10 @@ section h2 {
 section p {
   max-width: 760px;
   margin: 0 auto 32px;
-  font-size: 16px;
   text-align: center;
 }
 
 /* ================= PORTFOLIO ================= */
-#portfolio {
-  padding-top: 120px;
-  padding-bottom: 80px;
-}
-
 #portfolio .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -124,66 +114,23 @@ section p {
 }
 
 /* ================= SHOP ================= */
-#shop {
-  padding-top: 120px;
-  padding-bottom: 80px;
-}
-
 #shop .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 32px;
 }
 
-#shop .shop-item img {
-  width: 100%;
+#shop img {
   height: 260px;
   object-fit: cover;
   border-radius: 8px;
-  transition: transform 0.3s ease;
 }
 
-#shop .shop-item img:hover {
-  transform: scale(1.05);
-}
-
-#shop .price {
-  margin-top: 12px;
-  font-size: 16px;
-  color: #555;
-  text-align: center;
-}
-
-/* ================= ABOUT / CONTACT ================= */
-#about p,
-#contact p {
-  max-width: 700px;
-  margin: 0 auto 32px;
-  text-align: center;
-}
-
-/* ================= FOOTER ================= */
-footer {
-  padding: 60px 80px;
-  font-size: 13px;
-  color: #666;
-  text-align: center;
-}
-
-footer a {
-  color: #1c1c1c;
-  text-decoration: none;
-}
-
-footer a:hover {
-  opacity: 0.6;
-}
-
-/* ================= MODAL PORTFOLIO ================= */
+/* ================= MODAL ================= */
 .modal {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.9);
   display: none;
   align-items: center;
   justify-content: center;
@@ -205,60 +152,28 @@ footer a:hover {
 .modal-content img {
   width: 100%;
   border-radius: 6px;
-  transition: transform 0.3s ease;
 }
 
-.modal-content img:hover {
-  transform: scale(1.03);
-}
-
+/* ================= MODAL CONTROLS ================= */
 .close {
   position: absolute;
   top: 30px;
   right: 40px;
   font-size: 40px;
-  color: #ffffff;
+  color: #fff;
   cursor: pointer;
 }
 
-/* ================= RESPONSIVE ================= */
-@media (max-width: 900px) {
-  section {
-    padding: 80px 32px;
-  }
-
-  .logo-svg {
-    width: 180px;
-  }
-
-  .tagline {
-    font-size: 14px;
-    margin-bottom: 16px;
-  }
-
-  .main-nav {
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  #portfolio .gallery,
-  #shop .gallery {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  #portfolio .gallery img,
-  #shop .shop-item img {
-    height: 200px;
-  }
+/* STRZAŁKI */
 .nav {
-  position: absolute;
+  position: fixed;
   top: 50%;
   transform: translateY(-50%);
   font-size: 60px;
   color: white;
   cursor: pointer;
   user-select: none;
+  z-index: 10000;
   opacity: 0.8;
 }
 
@@ -272,4 +187,29 @@ footer a:hover {
 
 .next {
   right: 40px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  section {
+    padding: 80px 32px;
+  }
+
+  .logo-svg {
+    width: 180px;
+  }
+
+  .main-nav {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  #portfolio .gallery,
+  #shop .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .nav {
+    font-size: 40px;
+  }
 }
