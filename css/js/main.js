@@ -67,17 +67,17 @@ document.addEventListener("keydown", e => {
   <img src="./images/kitchen1_4.jpg" data-series="livingroom1">
 
   <!-- Seria kitchen01 -->
-  <img src="./images/kitchen2_2.jpg" data-series="kitchen01">
-  <img src="./images/kitchen2_3.jpg" data-series="kitchen01">
-  <img src="./images/kitchen2_4.jpg" data-series="kitchen01">
+  <img src="./images/kitchen walnut_ kuchnia orzech amerykanski_chris cimer_2.jpg" data-series="kitchen01">
+  <img src="./images/kitchen walnut_ kuchnia orzech amerykanski_chris cimer_3.jpg" data-series="kitchen01">
+  <img src="./images/kitchen walnut_ kuchnia orzech amerykanski_chris cimer_4.jpg" data-series="kitchen01">
   
   <!-- Seria kitchen04 -->
   <img src="./images/05_classic bespoke kitchen in a London Victorian townhouse_ovens with pie inside_chris cimer.png" data-series="kitchen04">
   <img src="./images/07__classic bespoke kitchen in a London Victorian townhouse_hob with cooker _chris cimer.png" data-series="kitchen04">
   <img src="./images/09_classic bespoke kitchen in a London Victorian townhouse_hob with cooker _chris cimer.png" data-series="kitchen04">
   <img src="./images/images/04_classic bespoke kitchen in a London Victorian townhouse_sink zoom with rose inside_chris cimer.png" data-series="kitchen04">
-  <img src="./images/images/03_classic bespoke kitchen in a London Victorian townhouse_sink zoom_chris cimer.png" data-series="kitchen04">
   <img src="./images/images/images/01___siedzisko_classic bespoke kitchen in a London Victorian townhouse_hob with cooker _chris cimer.png" data-series="kitchen04">
+  <img src="./images/images/images/kitchen walnut_ kuchnia orzech amerykanski_chris cimer_5.jpg" data-series="kitchen04">
                          
 
   <!-- Seria kitchen03 -->
