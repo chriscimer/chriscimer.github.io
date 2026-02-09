@@ -22,30 +22,33 @@ img {
 /* HEADER */
 .site-header {
   display: flex;
-  flex-direction: column; /* mobile-first ustawienie */
+  flex-direction: row; /* logo pośrodku, menu po bokach */
   align-items: center;
-  justify-content: center;
+  justify-content: space-between; /* menu po bokach, logo w centrum */
   padding: 32px 40px;
+  width: 100%;
 }
 
 /* LOGO SVG */
 .logo-svg {
-  width: 320px; /* minimalne powiększenie desktop */
+  flex-grow: 1;            /* logo zajmuje całą przestrzeń między linkami */
+  text-align: center;       /* wyśrodkowanie logo */
+  max-width: 60%;           /* kontrola maksymalnej szerokości logo */
   height: auto;
-  display: block;
-  margin-bottom: 16px; /* oddziel od nav */
+  display: inline-block;
+  margin: 0;                /* usuń dolny margines */
 }
 
 .logo-name {
   font-family: "Playfair Display", "Times New Roman", serif;
-  font-size: 42px;
+  font-size: 48px;          /* powiększone na desktopie */
   letter-spacing: 3.5px;
   fill: #111111;
 }
 
 .logo-tagline {
   font-family: "Helvetica Neue", Arial, sans-serif;
-  font-size: 14px;
+  font-size: 16px;          /* lekko powiększone */
   letter-spacing: 2.5px;
   fill: #111111;
 }
@@ -54,9 +57,9 @@ img {
 .main-nav {
   display: flex;
   gap: 40px;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 8px;
+  flex-wrap: nowrap;
+  justify-content: flex-start; /* menu po lewej/prawej */
+  flex-shrink: 0;              /* menu nie kurczy się */
 }
 
 .main-nav a {
@@ -72,16 +75,22 @@ img {
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
+  .site-header {
+    flex-direction: column;   /* na mobile wraca kolumna */
+    align-items: center;
+    padding: 24px 32px;
+  }
+
   .logo-svg {
-    width: 240px; /* większe na telefonie */
+    max-width: 80%;           /* większe na telefonie */
   }
 
   .logo-name {
-    font-size: 32px;
+    font-size: 36px;
   }
 
   .logo-tagline {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .main-nav {
