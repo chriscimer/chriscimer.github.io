@@ -251,4 +251,25 @@ footer a:hover {
   #shop .shop-item img {
     height: 200px;
   }
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 60px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  opacity: 0.8;
+}
+
+.nav:hover {
+  opacity: 1;
+}
+
+.prev {
+  left: 40px;
+}
+
+.next {
+  right: 40px;
 }
