@@ -1,26 +1,36 @@
-// PORTFOLIO MODAL
-const galleryImages = document.querySelectorAll('.gallery img');
-const modal = document.getElementById('modal');
-const modalContent = modal.querySelector('.modal-content');
-const closeBtn = modal.querySelector('.close');
+document.addEventListener("DOMContentLoaded", () => {
 
-galleryImages.forEach(img => {
-  img.addEventListener('click', () => {
-    const series = img.dataset.series;
-    const relatedImages = document.querySelectorAll(`.gallery img[data-series="${series}"]`);
-    
-    modalContent.innerHTML = ''; // czyści poprzednie zdjęcia
-    relatedImages.forEach(relImg => {
-      const clone = relImg.cloneNode();
-      modalContent.appendChild(clone);
+  const modal = document.getElementById("modal");
+  const modalContent = modal.querySelector(".modal-content");
+  const closeBtn = modal.querySelector(".close");
+
+  const images = document.querySelectorAll(".gallery img[data-series]");
+
+  images.forEach(img => {
+    img.addEventListener("click", () => {
+      const series = img.dataset.series;
+
+      modalContent.innerHTML = "";
+
+      document
+        .querySelectorAll(`.gallery img[data-series="${series}"]`)
+        .forEach(item => {
+          const clone = item.cloneNode(true);
+          modalContent.appendChild(clone);
+        });
+
+      modal.classList.add("active");
     });
-    
-    modal.style.display = 'block';
   });
-});
 
-// zamknięcie modala
-closeBtn.onclick = () => modal.style.display = 'none';
-window.onclick = e => {
-  if(e.target == modal) modal.style.display = 'none';
-};
+  closeBtn.addEventListener("click", () => {
+    modal.classList.remove("active");
+  });
+
+  modal.addEventListener("click", e => {
+    if (e.target === modal) {
+      modal.classList.remove("active");
+    }
+  });
+
+});
