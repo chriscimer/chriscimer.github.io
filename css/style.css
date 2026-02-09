@@ -22,16 +22,18 @@ img {
 /* HEADER */
 .site-header {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column; /* mobile-first ustawienie */
   align-items: center;
-  padding: 32px 64px;
+  justify-content: center;
+  padding: 32px 40px;
 }
 
 /* LOGO SVG */
 .logo-svg {
-  width: 260px;
+  width: 320px; /* minimalne powiększenie desktop */
   height: auto;
   display: block;
+  margin-bottom: 16px; /* oddziel od nav */
 }
 
 .logo-name {
@@ -43,13 +45,21 @@ img {
 
 .logo-tagline {
   font-family: "Helvetica Neue", Arial, sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: 2.5px;
   fill: #111111;
 }
+
 /* NAV */
+.main-nav {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 8px;
+}
+
 .main-nav a {
-  margin-left: 48px;
   text-decoration: none;
   color: #1c1c1c;
   font-size: 14px;
@@ -60,6 +70,26 @@ img {
   opacity: 0.6;
 }
 
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .logo-svg {
+    width: 240px; /* większe na telefonie */
+  }
+
+  .logo-name {
+    font-size: 32px;
+  }
+
+  .logo-tagline {
+    font-size: 12px;
+  }
+
+  .main-nav {
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 16px;
+  }
+}
 /* HERO */
 .hero {
   position: relative;
