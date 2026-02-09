@@ -44,9 +44,8 @@ function showPrev() {
   openModal();
 }
 
-nextBtn.addEventListener("click", showNext);
-prevBtn.addEventListener("click", showPrev);
-
+if (nextBtn) nextBtn.addEventListener("click", showNext);
+if (prevBtn) prevBtn.addEventListener("click", showPrev);
 closeBtn.addEventListener("click", () => {
   modal.classList.remove("active");
 });
