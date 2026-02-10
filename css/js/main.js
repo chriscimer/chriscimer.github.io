@@ -8,18 +8,19 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentImages = [];
   let currentIndex = 0;
 
-  // Łączymy wszystkie zdjęcia portfolio, w tym ukryte
+  // Pobieramy wszystkie zdjęcia z portfolio i ukryte
   const allPortfolioImages = Array.from(document.querySelectorAll("#portfolio .gallery img"))
     .concat(Array.from(document.querySelectorAll("div[style*='display:none'] img")));
 
+  // Dodajemy event klik dla każdego zdjęcia
   allPortfolioImages.forEach(img => {
     img.addEventListener("click", () => {
       const series = img.dataset.series;
 
-      // Pobieramy wszystkie zdjęcia z tej samej serii
-      currentImages = Array.from(
-        allPortfolioImages.filter(el => el.dataset.series === series)
-      ).map(el => el.src);
+      // Pobieramy wszystkie zdjęcia tej samej serii
+      currentImages = allPortfolioImages
+        .filter(el => el.dataset.series === series)
+        .map(el => el.src);
 
       currentIndex = currentImages.indexOf(img.src);
       openModal();
@@ -28,6 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function openModal() {
     modalContent.innerHTML = "";
+    if (currentImages.length === 0) return;
+
     const image = document.createElement("img");
     image.src = currentImages[currentIndex];
     modalContent.appendChild(image);
@@ -35,11 +38,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function showNext() {
+    if (currentImages.length === 0) return;
     currentIndex = (currentIndex + 1) % currentImages.length;
     openModal();
   }
 
   function showPrev() {
+    if (currentImages.length === 0) return;
     currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
     openModal();
   }
@@ -49,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (prevBtn) prevBtn.addEventListener("click", showPrev);
   if (closeBtn) closeBtn.addEventListener("click", () => modal.classList.remove("active"));
 
-  // Klik w tło modala zamyka
+  // Klik w tło modala zamyka go
   modal.addEventListener("click", e => {
     if (e.target === modal) modal.classList.remove("active");
   });
