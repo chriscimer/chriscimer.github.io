@@ -8,16 +8,14 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentImages = [];
   let currentIndex = 0;
 
-  // Pobieramy wszystkie zdjęcia z portfolio i ukryte
   const allPortfolioImages = Array.from(document.querySelectorAll("#portfolio .gallery img"))
     .concat(Array.from(document.querySelectorAll("div[style*='display:none'] img")));
 
-  // Dodajemy event klik dla każdego zdjęcia
   allPortfolioImages.forEach(img => {
     img.addEventListener("click", () => {
       const series = img.dataset.series;
 
-      // Pobieramy wszystkie zdjęcia tej samej serii
+      // Pobieramy wszystkie zdjęcia z tej samej serii
       currentImages = allPortfolioImages
         .filter(el => el.dataset.series === series)
         .map(el => el.src);
@@ -31,9 +29,31 @@ document.addEventListener("DOMContentLoaded", () => {
     modalContent.innerHTML = "";
     if (currentImages.length === 0) return;
 
-    const image = document.createElement("img");
-    image.src = currentImages[currentIndex];
-    modalContent.appendChild(image);
+    // Duże zdjęcie
+    const mainImage = document.createElement("img");
+    mainImage.src = currentImages[currentIndex];
+    mainImage.classList.add("main-image");
+    modalContent.appendChild(mainImage);
+
+    // Miniaturki
+    const thumbsContainer = document.createElement("div");
+    thumbsContainer.classList.add("thumbs-container");
+
+    currentImages.forEach((src, i) => {
+      const thumb = document.createElement("img");
+      thumb.src = src;
+      thumb.classList.add("thumb");
+      if (i === currentIndex) thumb.classList.add("active-thumb");
+
+      thumb.addEventListener("click", () => {
+        currentIndex = i;
+        openModal();
+      });
+
+      thumbsContainer.appendChild(thumb);
+    });
+
+    modalContent.appendChild(thumbsContainer);
     modal.classList.add("active");
   }
 
@@ -49,17 +69,14 @@ document.addEventListener("DOMContentLoaded", () => {
     openModal();
   }
 
-  // Obsługa przycisków
   if (nextBtn) nextBtn.addEventListener("click", showNext);
   if (prevBtn) prevBtn.addEventListener("click", showPrev);
   if (closeBtn) closeBtn.addEventListener("click", () => modal.classList.remove("active"));
 
-  // Klik w tło modala zamyka go
   modal.addEventListener("click", e => {
     if (e.target === modal) modal.classList.remove("active");
   });
 
-  // Nawigacja klawiaturą
   document.addEventListener("keydown", e => {
     if (!modal.classList.contains("active")) return;
     if (e.key === "ArrowRight") showNext();
