@@ -159,7 +159,7 @@ section p {
   max-width: 90%;
   max-height: 90%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 1fr;
   gap: 20px;
 }
 
@@ -205,6 +205,38 @@ section p {
 
 .next {
   right: 40px;
+}
+
+/* ================= MINIATURKI W MODAL ================= */
+.thumbs-container {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.thumbs-container .thumb {
+  width: 60px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.thumbs-container .thumb:hover,
+.thumbs-container .active-thumb {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.modal-content .main-image {
+  width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 6px;
 }
 
 /* ================= ABOUT / CONTACT ================= */
@@ -255,36 +287,9 @@ footer a:hover {
   .nav {
     font-size: 40px;
   }
-}/* Miniaturki w modal */
-.thumbs-container {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 16px;
-  flex-wrap: wrap;
-}
 
-.thumbs-container .thumb {
-  width: 60px;
-  height: 40px;
-  object-fit: cover;
-  border-radius: 4px;
-  cursor: pointer;
-  opacity: 0.6;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  .thumbs-container .thumb {
+    width: 50px;
+    height: 35px;
+  }
 }
-
-.thumbs-container .thumb:hover,
-.thumbs-container .active-thumb {
-  opacity: 1;
-  transform: scale(1.05);
-}
-
-/* Główne zdjęcie w modal */
-.modal-content .main-image {
-  width: 100%;
-  max-height: 70vh;
-  object-fit: contain;
-  border-radius: 6px;
-}
-
