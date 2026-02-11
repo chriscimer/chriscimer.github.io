@@ -294,4 +294,48 @@ footer a:hover {
     width: 50px;
     height: 35px;
   }
+
+/* ===== LUXURY MINIMAL HEADER ===== */
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 60px;
+    background-color: #ffffff;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
 }
+
+/* Logo – średnie, eleganckie */
+.logo {
+    width: 130px;
+    height: auto;
+    display: block;
+}
+
+/* Menu */
+.main-nav {
+    display: flex;
+    gap: 40px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #222;
+    font-weight: 300;
+    transition: opacity 0.3s ease;
+}
+
+/* Subtelny hover */
+.main-nav a:hover {
+    opacity: 0.5;
+}
+
+/* Usuwamy tagline jeśli niepotrzebny */
+.tagline {
+    display: none;
+}
+
