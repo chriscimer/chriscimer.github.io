@@ -83,4 +83,35 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === "ArrowLeft") showPrev();
     if (e.key === "Escape") modal.classList.remove("active");
   });
+  const modal = document.querySelector(".modal");
+const modalImg = document.getElementById("modal-img");
+const closeBtn = document.querySelector(".close");
+const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".prev");
+const galleryImages = document.querySelectorAll(".gallery img");
+
+let currentIndex = 0;
+
+galleryImages.forEach((img, index) => {
+  img.addEventListener("click", () => {
+    modal.style.display = "flex";
+    modalImg.src = img.src;
+    currentIndex = index;
+  });
+});
+
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+nextBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % galleryImages.length;
+  modalImg.src = galleryImages[currentIndex].src;
+});
+
+prevBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+  modalImg.src = galleryImages[currentIndex].src;
+});
+
 });
