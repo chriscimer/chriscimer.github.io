@@ -19,23 +19,27 @@ img {
 }
 
 /* ================= HEADER ================= */
+/* =============== LOGO & HEADER FIX =============== */
 .site-header {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 28px 60px;
+  padding: 18px 40px; /* mniej miejsca wokół */
   background-color: #ffffff;
-  border-bottom: 1px solid rgba(0,0,0,0.06);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.logo-svg {
-  height: 50px;   /* docelowa wysokość logo na desktop */
-  width: auto;    /* zachowuje proporcje */
-  display: block;
+/* Ustawiona docelowa wysokość logo */
+.site-header .logo-svg {
+  height: 60px !important; /* mniejsze logo */
+  width: auto !important;
+  max-width: none !important;
+}
+
+/* Jeżeli masz wersję .logo zamiast .logo-svg */
+.site-header .logo {
+  height: 60px !important;
+  width: auto !important;
 }
 
 .main-nav {
@@ -266,10 +270,13 @@ footer a:hover {
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
-  .logo-svg {
-    height: 35px;  /* mniejsze logo na mobile */
+  .site-header {
+    padding: 14px 20px;
   }
-
+  .site-header .logo-svg,
+  .site-header .logo {
+    height: 45px !important;
+  }
   .main-nav {
     flex-direction: column;
     gap: 16px;
