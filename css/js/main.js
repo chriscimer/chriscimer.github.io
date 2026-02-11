@@ -92,11 +92,16 @@ const galleryImages = document.querySelectorAll(".gallery img");
 
 let currentIndex = 0;
 
-galleryImages.forEach((img, index) => {
+galleryImages.forEach(img => {
   img.addEventListener("click", () => {
+    const series = img.dataset.series;
+
+    // teraz bierzemy wszystkie zdjęcia tej serii, w tym ukryte
+    currentSeries = Array.from(document.querySelectorAll(`.gallery img[data-series="${series}"], #hidden-images img[data-series="${series}"]`));
+
+    currentIndex = currentSeries.indexOf(img);
     modal.style.display = "flex";
     modalImg.src = img.src;
-    currentIndex = index;
   });
 });
 
