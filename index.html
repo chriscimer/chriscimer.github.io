@@ -106,28 +106,39 @@
 
 <!-- SHOP -->
 <section id="shop">
-  <h2>Shop – autorskie meble premium </h2>
+  <h2>Shop – kolekcja mebli premium</h2>
   <p>
-    Prezentowane meble są projektowane i wykonywane na indywidualne zamówienie.
-    Każdy projekt oparty jest o precyzyjne rysunki techniczne
-    i przygotowany pod produkcję stolarską.
+    Ekskluzywne, ręcznie wykonane meble premium, projektowane i produkowane w naszym studio. Każdy projekt jest unikalny i dopasowany do potrzeb klienta.
   </p>
 
   <div class="gallery">
-    <div class="shop-item">
-      <img src="./images/mini_chris cimer-collection-wooden-sideboard_01_b.png" alt="Komoda na wymiar z drewna – projekt Chris Cimer">
-      <p class="price">Cena orientacyjna: 12 000 zł</p>
-    </div>
-    <div class="shop-item">
-      <img src="./images/bespoke-wooden-sideboard_chris cimer 1a mini 2.png" alt="Witryna na wymiar – meble premium – Chris Cimer">
-      <p class="price">Cena orientacyjna: 15 500 zł</p>
-    </div>
-    <div class="shop-item">
-      <img src="./images/mini 01_ebbony-makasar-bespoke-wooden-sideboard-strips-by-chris cimer.png" alt="Szafka na wymiar – projekt mebli luksusowych – Chris Cimer">
-      <p class="price">Cena orientacyjna: 9 800 zł</p>
-    </div>
+    <!-- 3 główne zdjęcia -->
+    <img src="./images/mini_chris cimer-collection-wooden-sideboard_01_b.png" 
+         alt="Mini drewniana komoda – Wooden sideboard – Chris Cimer" 
+         data-series="shop01">
+    <img src="./images/bespoke-wooden-sideboard_chris cimer 1a mini 2.png" 
+         alt="Komoda na zamówienie – Bespoke wooden sideboard – Chris Cimer" 
+         data-series="shop01">
+    <img src="./images/mini 01_ebbony-makasar-bespoke-wooden-sideboard-strips-by-chris cimer.png" 
+         alt="Komoda z drewna ebony makasar – Ebony Makasar sideboard – Chris Cimer" 
+         data-series="shop01">
+  </div>
+
+  <!-- ukryte dodatkowe zdjęcia serii shop -->
+  <div id="hidden-shop-images" style="display:none;">
+    <img src="./images/shop_additional_1.png" alt="..." data-series="shop01">
+    <img src="./images/shop_additional_2.png" alt="..." data-series="shop01">
+    <img src="./images/shop_additional_3.png" alt="..." data-series="shop01">
   </div>
 </section>
+
+<!-- MODAL (ten sam co w portfolio) -->
+<div id="modal-shop" class="modal">
+  <span class="close">&times;</span>
+  <span class="nav prev">&#10094;</span>
+  <span class="nav next">&#10095;</span>
+  <img class="modal-content main-image" id="modal-shop-img">
+</div>
 
 <!-- ABOUT -->
 <section id="about">
