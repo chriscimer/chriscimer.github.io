@@ -226,5 +226,60 @@ modal.addEventListener("click", e => {
   }
 });
 </script>
+  <script>
+const modalShop = document.getElementById("modal-shop");
+const modalShopImg = document.getElementById("modal-shop-img");
+const closeShopBtn = modalShop.querySelector(".close");
+const nextShopBtn = modalShop.querySelector(".next");
+const prevShopBtn = modalShop.querySelector(".prev");
+
+// tylko główne zdjęcia w galerii Shop
+const shopGalleryImages = document.querySelectorAll("#shop .gallery img");
+
+let currentShopSeries = [];
+let currentShopIndex = 0;
+
+shopGalleryImages.forEach(img => {
+  img.addEventListener("click", () => {
+    const series = img.dataset.series;
+
+    // pobieramy wszystkie zdjęcia serii (główne + ukryte)
+    currentShopSeries = Array.from(
+      document.querySelectorAll(
+        `#shop .gallery img[data-series="${series}"], #hidden-shop-images img[data-series="${series}"]`
+      )
+    );
+
+    currentShopIndex = currentShopSeries.findIndex(i => i === img);
+
+    modalShop.style.display = "flex";
+    modalShopImg.src = img.src;
+  });
+});
+
+// zamykanie modala
+closeShopBtn.addEventListener("click", () => {
+  modalShop.style.display = "none";
+});
+
+// przewijanie dalej
+nextShopBtn.addEventListener("click", () => {
+  currentShopIndex = (currentShopIndex + 1) % currentShopSeries.length;
+  modalShopImg.src = currentShopSeries[currentShopIndex].src;
+});
+
+// przewijanie wstecz
+prevShopBtn.addEventListener("click", () => {
+  currentShopIndex = (currentShopIndex - 1 + currentShopSeries.length) % currentShopSeries.length;
+  modalShopImg.src = currentShopSeries[currentShopIndex].src;
+});
+
+// klik poza obraz -> zamknij modal
+modalShop.addEventListener("click", e => {
+  if (e.target === modalShop) {
+    modalShop.style.display = "none";
+  }
+});
+</script>
 </body>
 </html>
