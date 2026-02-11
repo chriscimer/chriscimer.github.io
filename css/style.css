@@ -21,45 +21,39 @@ img {
 /* ================= HEADER ================= */
 /* =============== LOGO & HEADER FIX =============== */
 .site-header {
-  padding: 18px 40px; /* mniej miejsca wokół */
-  background-color: #ffffff;
-  border-bottom: none;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column; /* logo nad menu */
   align-items: center;
+  padding: 40px 20px;
+  background-color: #ffffff;
+  border-bottom: none; /* usunięta ramka */
 }
 
-/* Ustawiona docelowa wysokość logo */
-.site-header .logo-svg {
-  height: 60px !important; /* mniejsze logo */
-  width: auto !important;
-  max-width: none !important;
-}
-
-/* Jeżeli masz wersję .logo zamiast .logo-svg */
-.site-header .logo {
-  height: 60px !important;
-  width: auto !important;
+.logo-svg {
+  height: 80px;  /* ustaw wysokość logo */
+  width: auto;
+  margin-bottom: 20px;
 }
 
 .main-nav {
   display: flex;
   gap: 40px;
+  font-family: 'Inter', sans-serif; /* czcionka taka sama jak logo */
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .main-nav a {
-  text-decoration: none;
-  font-size: 14px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
   color: #222;
-  font-weight: 300;
-  transition: opacity 0.3s ease;
+  text-decoration: none;
+  transition: opacity 0.3s;
 }
 
 .main-nav a:hover {
   opacity: 0.5;
 }
+
 
 .tagline {
   font-size: 14px;
@@ -275,7 +269,7 @@ footer a:hover {
   }
   .site-header .logo-svg,
   .site-header .logo {
-    height: 45px !important;
+    height: 60px ;
   }
   .main-nav {
     flex-direction: column;
