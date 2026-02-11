@@ -23,7 +23,7 @@ img {
 .site-header {
   padding: 18px 40px; /* mniej miejsca wokół */
   background-color: #ffffff;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
+  border-bottom: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
