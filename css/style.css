@@ -125,15 +125,17 @@ section p {
   gap: 32px;
 }
 
-#shop .shop-item img {
+#shop .gallery-item img {
   width: 100%;
   height: 260px;
   object-fit: cover;
   border-radius: 8px;
-  transition: transform 0.3s ease;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  transition: transform 0.35s ease;
 }
 
-#shop .shop-item img:hover {
+#shop .gallery-item img:hover {
   transform: scale(1.05);
 }
 
