@@ -125,7 +125,7 @@ section p {
   gap: 32px;
 }
 
-#shop .gallery-item img {
+#shop .gallery img {
   width: 100%;
   height: 260px;
   object-fit: cover;
@@ -135,9 +135,10 @@ section p {
   transition: transform 0.35s ease;
 }
 
-#shop .gallery-item img:hover {
+#shop .gallery img:hover {
   transform: scale(1.05);
 }
+
 
 #shop .price {
   margin-top: 12px;
