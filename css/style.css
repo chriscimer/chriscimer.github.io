@@ -106,7 +106,7 @@ section p {
 
 #portfolio .gallery img {
   width: 100%;
-  height: 300px; /* usuwamy stałą wysokość */
+  height: auto; /* usuwamy stałą wysokość */
   object-fit: contain; /* żeby nie było przycinania */
   border-radius: 0px; /* bardziej editorial look */
   box-shadow: none; /* czysto, premium */
