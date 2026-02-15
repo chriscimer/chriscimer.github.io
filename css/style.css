@@ -54,7 +54,6 @@ img {
   opacity: 0.5;
 }
 
-
 .tagline {
   font-size: 14px;
   margin-bottom: 16px;
@@ -74,7 +73,7 @@ img {
 .hero img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* desktop: wypełnia kontener */
   transition: opacity 1.5s ease-in-out;
 }
 
@@ -101,7 +100,6 @@ section p {
 #portfolio .gallery {
   display: flex;
   flex-direction: column;
-
   gap: 140px;        /* duży luxury spacing */
   max-width: 980px;  /* PERFECT szerokość dla poziomych renderów */
   margin: 100px auto;
@@ -111,7 +109,6 @@ section p {
   width: 100%;
   height: auto;
   display: block;
-
   cursor: pointer;
   transition: transform 0.5s ease, opacity 0.5s ease;
 }
@@ -142,20 +139,22 @@ section p {
   transform: scale(1.05);
 }
 
-
 #shop .price {
   margin-top: 12px;
   font-size: 16px;
   color: #555;
   text-align: center;
 }
+
 .shop-item img {
   width: 100%;
-  aspect-ratio: 4 / 5;   /* możesz zmienić np. na 1 / 1 albo 3 / 4 */
+  aspect-ratio: 4 / 5;
   object-fit: cover;
-  border-radius: 16px;   /* dopasuj do portfolio */
+  border-radius: 16px;
   display: block;
-}.shop-image {
+}
+
+.shop-image {
   aspect-ratio: 4 / 5;
   border-radius: 20px;
   overflow: hidden;
@@ -297,18 +296,31 @@ footer a:hover {
   .site-header {
     padding: 14px 20px;
   }
+
   .site-header .logo-svg,
   .site-header .logo {
-    height: 60px ;
+    height: 60px;
   }
+
+  /* Menu mniej szerokie na telefonie */
   .main-nav {
     flex-direction: column;
-    gap: 16px;
+    gap: 10px;  /* zmniejszone odstępy */
+    align-items: center;
   }
 
   #portfolio .gallery,
   #shop .gallery {
     grid-template-columns: 1fr;
+    gap: 60px; /* zmniejszone odległości na telefonie */
+    margin: 50px auto; /* dopasowanie marginesu */
+  }
+
+  /* Hero image pełna szerokość, cały obraz */
+  .hero img {
+    object-fit: contain;
+    width: 100%;
+    height: auto;
   }
 
   .nav {
@@ -323,47 +335,47 @@ footer a:hover {
   section {
     padding: 80px 20px;
   }
+
   html {
-  scroll-behavior: smooth;
-}
-.portfolio-item {
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    scroll-behavior: smooth;
+  }
 
-.portfolio-item img {
-  display: block;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
+  .portfolio-item {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
 
-.portfolio-item:hover img {
-  transform: scale(1.05);
-}
+  .portfolio-item img {
+    display: block;
+    width: 100%;
+    transition: transform 0.3s ease;
+  }
 
-.portfolio-item::after {
-  content: attr(data-title);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 15px;
-  background: rgba(0,0,0,0.4); /* półprzezroczysty overlay */
-  color: #FFD700; /* złoty kolor tekstu */
-  font-weight: 500;
-  text-align: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
+  .portfolio-item:hover img {
+    transform: scale(1.05);
+  }
 
-.portfolio-item:hover::after {
-  opacity: 1;
-}
+  .portfolio-item::after {
+    content: attr(data-title);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background: rgba(0,0,0,0.4);
+    color: #FFD700;
+    font-weight: 500;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
 
-.portfolio-item:hover {
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
+  .portfolio-item:hover::after {
+    opacity: 1;
+  }
 
+  .portfolio-item:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  }
 }
-
