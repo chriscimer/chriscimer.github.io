@@ -76,6 +76,8 @@ img {
   height: 100%;
   object-fit: cover;
   border: none; /* usuwa ramkę */
+
+  transition: opacity 1.5s ease-in-out;
 }
 
 /* ================= SECTIONS ================= */
