@@ -118,19 +118,20 @@ prevBtn.addEventListener("click", () => {
   currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
   modalImg.src = galleryImages[currentIndex].src;
 });
- // ===== HERO IMAGE ROTATION =====
+// ===== HERO IMAGE ROTATION PREMIUM =====
 
 const heroImage = document.getElementById("hero-image");
 
-const heroImages = [
-  "./images/1_logo_small_ctr_%20hero_by_chris_cimer.jpg",
+const logoImage = "./images/1_logo_small_ctr_%20hero_by_chris_cimer.jpg";
+
+const interiorImages = [
   "./images/iterior_kitchen_hero_by_chris_cimer_1.png",
   "./images/iterior_kitchen_hero_by_chris_cimer_2.png",
   "./images/iterior_kitchen_hero_by_chris_cimer_3.png",
   "./images/iterior_kitchen_hero_by_chris_cimer_4.png"
 ];
 
-let heroIndex = 0;
+let heroIndex = -1; // start po logo
 
 setInterval(() => {
 
@@ -138,11 +139,16 @@ setInterval(() => {
 
   setTimeout(() => {
 
-    heroIndex = (heroIndex + 1) % heroImages.length;
-    heroImage.src = heroImages[heroIndex];
+    heroIndex++;
+
+    if (heroIndex >= interiorImages.length) {
+      heroIndex = 0;
+    }
+
+    heroImage.src = interiorImages[heroIndex];
 
     heroImage.style.opacity = 1;
 
-  }, 600);
+  }, 800);
 
 }, 7000);
