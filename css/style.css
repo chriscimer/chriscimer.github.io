@@ -4,7 +4,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+body > a[href^="#"] {
+  display: none !important;
+}
 body {
   font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
   background-color: #f5f5f3;
