@@ -122,7 +122,7 @@ prevBtn.addEventListener("click", () => {
 
 const heroImage = document.getElementById("hero-image");
 
-const logoImage = "/images/1_logo_small_ctr_%20hero_by_chris_cimer.jpg";
+const logoImage = "/images/h12_chris_cimer.jpg";
 
 const interiorImages = [
   "/images/iterior_kitchen_hero_by_chris_cimer_1.png",
