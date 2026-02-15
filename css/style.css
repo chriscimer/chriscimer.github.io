@@ -101,7 +101,10 @@ section p {
 #portfolio .gallery {
   display: flex;
   flex-direction: column;
-  gap: 80px; /* większy odstęp = bardziej luxury */
+  gap: 80px;
+
+  max-width: 1100px;   /* KLUCZOWE – zmniejsza zdjęcia */
+  margin: 0 auto;      /* centruje */
 }
 
 #portfolio .gallery img {
