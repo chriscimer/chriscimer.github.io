@@ -19,29 +19,29 @@ img {
 }
 
 /* ================= HEADER ================= */
-/* =============== LOGO & HEADER FIX =============== */
 .site-header {
   display: flex;
   flex-direction: column; /* logo nad menu */
   align-items: center;
   padding: 40px 20px;
   background-color: #ffffff;
-  border-bottom: none; /* usunięta ramka */
+  border-bottom: none;
 }
 
 .logo-svg {
-  height: 80px;  /* ustaw wysokość logo */
+  height: 80px;
   width: auto;
   margin-bottom: 20px;
 }
 
 .main-nav {
   display: flex;
-  gap: 40px;
-  font-family: 'Inter', sans-serif; /* czcionka taka sama jak logo */
+  gap: 30px; /* mniejsze odstępy, zmieniać wg potrzeby */
+  font-family: 'Inter', sans-serif;
   font-size: 18px;
   text-transform: uppercase;
   letter-spacing: 2px;
+  justify-content: center; /* centrowanie w poziomie */
 }
 
 .main-nav a {
@@ -64,7 +64,7 @@ img {
 .hero {
   width: 100%;
   height: 80vh;
-  background-color: #f5f5f3; /* ten sam kolor co strona */
+  background-color: #f5f5f3;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,7 +73,7 @@ img {
 .hero img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* desktop: wypełnia kontener */
+  object-fit: cover;
   transition: opacity 1.5s ease-in-out;
 }
 
@@ -100,15 +100,14 @@ section p {
 #portfolio .gallery {
   display: flex;
   flex-direction: column;
-  gap: 140px;        /* duży luxury spacing */
-  max-width: 980px;  /* PERFECT szerokość dla poziomych renderów */
+  gap: 140px;
+  max-width: 980px;
   margin: 100px auto;
 }
 
 #portfolio .gallery img {
   width: 100%;
   height: auto;
-  display: block;
   cursor: pointer;
   transition: transform 0.5s ease, opacity 0.5s ease;
 }
@@ -302,21 +301,21 @@ footer a:hover {
     height: 60px;
   }
 
-  /* Menu mniej szerokie na telefonie */
+  /* Menu nadal poziomo, zmniejszone odstępy */
   .main-nav {
-    flex-direction: column;
-    gap: 10px;  /* zmniejszone odstępy */
-    align-items: center;
+    flex-direction: row;
+    gap: 16px; /* zmniejszone, mieści się w ekranie */
+    justify-content: center;
   }
 
   #portfolio .gallery,
   #shop .gallery {
     grid-template-columns: 1fr;
-    gap: 60px; /* zmniejszone odległości na telefonie */
-    margin: 50px auto; /* dopasowanie marginesu */
+    gap: 60px;
+    margin: 50px auto;
   }
 
-  /* Hero image pełna szerokość, cały obraz */
+  /* Hero image pełna szerokość */
   .hero img {
     object-fit: contain;
     width: 100%;
