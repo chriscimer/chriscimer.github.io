@@ -120,7 +120,18 @@ section p {
   transform: scale(1.015);
   opacity: 0.98;
 }
+/* ===== PORTFOLIO FADE-IN ===== */
 
+#portfolio .gallery img {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+#portfolio .gallery img.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 /* ================= SHOP ================= */
 #shop .gallery {
   display: grid;
