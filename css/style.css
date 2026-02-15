@@ -101,26 +101,25 @@ section p {
 #portfolio .gallery {
   display: flex;
   flex-direction: column;
-  gap: 120px;
 
-  max-width: 1100px;   /* KLUCZOWE – zmniejsza zdjęcia */
-  margin: 60px auto;      /* centruje */
+  gap: 140px;        /* duży luxury spacing */
+  max-width: 980px;  /* PERFECT szerokość dla poziomych renderów */
+  margin: 100px auto;
 }
 
 #portfolio .gallery img {
   width: 100%;
-  height: auto; /* usuwamy stałą wysokość */
-  object-fit: contain; /* żeby nie było przycinania */
-  border-radius: 0px; /* bardziej editorial look */
-  box-shadow: none; /* czysto, premium */
+  height: auto;
+  display: block;
+
   cursor: pointer;
-  transition: transform 0.4s ease;
+  transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
 #portfolio .gallery img:hover {
-  transform: scale(1.02); /* subtelny efekt */
+  transform: scale(1.015);
+  opacity: 0.98;
 }
-
 
 /* ================= SHOP ================= */
 #shop .gallery {
