@@ -120,16 +120,16 @@ prevBtn.addEventListener("click", () => {
 });
   // ===== HERO IMAGE ROTATION =====
 
-const heroImage = document.getElementById("hero-image");
+const heroImage = document.getElementById("hero");
 
 const heroImages = [
 
-  "/images/1_logo_small_ctr_%20hero_by_chris_cimer.jpg",
+  "./images/1_logo_small_ctr_%20hero_by_chris_cimer.jpg",
 
-  "/images/iterior_kitchen_hero_by_chris_cimer_1.png",
-  "/images/iterior_kitchen_hero_by_chris_cimer_2.png",
-  "/images/iterior_kitchen_hero_by_chris_cimer_3.png",
-  "/images/iterior_kitchen_hero_by_chris_cimer_4.png"
+  "./images/iterior_kitchen_hero_by_chris_cimer_1.png",
+  "./images/iterior_kitchen_hero_by_chris_cimer_2.png",
+  "./images/iterior_kitchen_hero_by_chris_cimer_3.png",
+  "./images/iterior_kitchen_hero_by_chris_cimer_4.png"
 
 ];
 
