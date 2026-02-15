@@ -128,6 +128,7 @@ const heroImages = [
 
   "./images/iterior_kitchen_hero_by_chris_cimer_1.png",
   "./images/iterior_kitchen_hero_by_chris_cimer_2.png",
+  ".images/interior with sideboard_concept by chris cimer .png",
   "./images/iterior_kitchen_hero_by_chris_cimer_3.png",
   "./images/iterior_kitchen_hero_by_chris_cimer_4.png"
 
