@@ -122,13 +122,13 @@ prevBtn.addEventListener("click", () => {
 
 const heroImage = document.getElementById("hero-image");
 
-const logoImage = "./images/1_logo_small_ctr_%20hero_by_chris_cimer.jpg";
+const logoImage = "/images/1_logo_small_ctr_%20hero_by_chris_cimer.jpg";
 
 const interiorImages = [
-  "./images/iterior_kitchen_hero_by_chris_cimer_1.png",
-  "./images/iterior_kitchen_hero_by_chris_cimer_2.png",
-  "./images/iterior_kitchen_hero_by_chris_cimer_3.png",
-  "./images/iterior_kitchen_hero_by_chris_cimer_4.png"
+  "/images/iterior_kitchen_hero_by_chris_cimer_1.png",
+  "/images/iterior_kitchen_hero_by_chris_cimer_2.png",
+  "/images/iterior_kitchen_hero_by_chris_cimer_3.png",
+  "/images/iterior_kitchen_hero_by_chris_cimer_4.png"
 ];
 
 let heroIndex = -1; // start po logo
