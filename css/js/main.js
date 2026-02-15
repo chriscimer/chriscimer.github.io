@@ -118,22 +118,5 @@ prevBtn.addEventListener("click", () => {
   currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
   modalImg.src = galleryImages[currentIndex].src;
 });
-  // ===== FADE IN ON SCROLL =====
-
-const portfolioImages = document.querySelectorAll('#portfolio .gallery img');
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, {
-  threshold: 0.15
-});
-
-portfolioImages.forEach(img => {
-  observer.observe(img);
-});
 
 });
