@@ -118,20 +118,16 @@ prevBtn.addEventListener("click", () => {
   currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
   modalImg.src = galleryImages[currentIndex].src;
 });
-  // ===== HERO IMAGE ROTATION =====
+ // ===== HERO IMAGE ROTATION =====
 
-const heroImage = document.getElementById("hero");
+const heroImage = document.getElementById("hero-image");
 
 const heroImages = [
-
   "./images/1_logo_small_ctr_%20hero_by_chris_cimer.jpg",
-
   "./images/iterior_kitchen_hero_by_chris_cimer_1.png",
   "./images/iterior_kitchen_hero_by_chris_cimer_2.png",
-  ".images/interior with sideboard_concept by chris cimer .png",
   "./images/iterior_kitchen_hero_by_chris_cimer_3.png",
   "./images/iterior_kitchen_hero_by_chris_cimer_4.png"
-
 ];
 
 let heroIndex = 0;
@@ -147,8 +143,6 @@ setInterval(() => {
 
     heroImage.style.opacity = 1;
 
-  }, 800);
+  }, 600);
 
 }, 7000);
-
-
