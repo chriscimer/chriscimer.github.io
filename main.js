@@ -1,12 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const modal = document.getElementById("modal");
-  const modalContent = document.querySelector(".modal-content");
-  const closeBtn = document.querySelector(".close");
-  const nextBtn = document.querySelector(".next");
-  const prevBtn = document.querySelector(".prev");
+  // =======================
+  // PORTFOLIO MODAL
+  // =======================
+  const portfolioModal = document.getElementById("modal");
+  const portfolioModalContent = document.querySelector("#modal .modal-content");
+  const portfolioCloseBtn = portfolioModal.querySelector(".close");
+  const portfolioNextBtn = portfolioModal.querySelector(".next");
+  const portfolioPrevBtn = portfolioModal.querySelector(".prev");
 
-  let currentImages = [];
-  let currentIndex = 0;
+  let portfolioImages = [];
+  let portfolioIndex = 0;
 
   const allPortfolioImages = Array.from(document.querySelectorAll("#portfolio .gallery img"))
     .concat(Array.from(document.querySelectorAll("div[style*='display:none'] img")));
@@ -15,140 +18,137 @@ document.addEventListener("DOMContentLoaded", () => {
     img.addEventListener("click", () => {
       const series = img.dataset.series;
 
-      // Pobieramy wszystkie zdjęcia z tej samej serii
-      currentImages = allPortfolioImages
-        .filter(el => el.dataset.series === series)
-        .map(el => el.src);
-
-      currentIndex = currentImages.indexOf(img.src);
-      openModal();
+      // pobierz wszystkie zdjęcia z tej samej serii
+      portfolioImages = allPortfolioImages.filter(el => el.dataset.series === series);
+      portfolioIndex = portfolioImages.indexOf(img);
+      openPortfolioModal();
     });
   });
 
-  function openModal() {
-    modalContent.innerHTML = "";
-    if (currentImages.length === 0) return;
+  function openPortfolioModal() {
+    portfolioModalContent.innerHTML = "";
+    if (portfolioImages.length === 0) return;
 
-    // Duże zdjęcie
+    // duże zdjęcie
     const mainImage = document.createElement("img");
-    mainImage.src = currentImages[currentIndex];
+    mainImage.src = portfolioImages[portfolioIndex].src;
     mainImage.classList.add("main-image");
-    modalContent.appendChild(mainImage);
+    portfolioModalContent.appendChild(mainImage);
 
-    // Miniaturki
+    // miniaturki
     const thumbsContainer = document.createElement("div");
     thumbsContainer.classList.add("thumbs-container");
 
-    currentImages.forEach((src, i) => {
+    portfolioImages.forEach((imgEl, i) => {
       const thumb = document.createElement("img");
-      thumb.src = src;
+      thumb.src = imgEl.src;
       thumb.classList.add("thumb");
-      if (i === currentIndex) thumb.classList.add("active-thumb");
+      if (i === portfolioIndex) thumb.classList.add("active-thumb");
 
       thumb.addEventListener("click", () => {
-        currentIndex = i;
-        openModal();
+        portfolioIndex = i;
+        openPortfolioModal();
       });
 
       thumbsContainer.appendChild(thumb);
     });
 
-    modalContent.appendChild(thumbsContainer);
-    modal.classList.add("active");
+    portfolioModalContent.appendChild(thumbsContainer);
+    portfolioModal.classList.add("active");
   }
 
-  function showNext() {
-    if (currentImages.length === 0) return;
-    currentIndex = (currentIndex + 1) % currentImages.length;
-    openModal();
+  function showNextPortfolio() {
+    if (portfolioImages.length === 0) return;
+    portfolioIndex = (portfolioIndex + 1) % portfolioImages.length;
+    openPortfolioModal();
   }
 
-  function showPrev() {
-    if (currentImages.length === 0) return;
-    currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
-    openModal();
+  function showPrevPortfolio() {
+    if (portfolioImages.length === 0) return;
+    portfolioIndex = (portfolioIndex - 1 + portfolioImages.length) % portfolioImages.length;
+    openPortfolioModal();
   }
 
-  if (nextBtn) nextBtn.addEventListener("click", showNext);
-  if (prevBtn) prevBtn.addEventListener("click", showPrev);
-  if (closeBtn) closeBtn.addEventListener("click", () => modal.classList.remove("active"));
+  if (portfolioNextBtn) portfolioNextBtn.addEventListener("click", showNextPortfolio);
+  if (portfolioPrevBtn) portfolioPrevBtn.addEventListener("click", showPrevPortfolio);
+  if (portfolioCloseBtn) portfolioCloseBtn.addEventListener("click", () => portfolioModal.classList.remove("active"));
 
-  modal.addEventListener("click", e => {
-    if (e.target === modal) modal.classList.remove("active");
+  portfolioModal.addEventListener("click", e => {
+    if (e.target === portfolioModal) portfolioModal.classList.remove("active");
   });
 
-  document.addEventListener("keydown", e => {
-    if (!modal.classList.contains("active")) return;
-    if (e.key === "ArrowRight") showNext();
-    if (e.key === "ArrowLeft") showPrev();
-    if (e.key === "Escape") modal.classList.remove("active");
+  // =======================
+  // SHOP MODAL
+  // =======================
+  const shopModal = document.getElementById("modal-shop");
+  const shopModalImg = document.getElementById("modal-shop-img");
+  const shopCloseBtn = shopModal.querySelector(".close");
+  const shopNextBtn = shopModal.querySelector(".next");
+  const shopPrevBtn = shopModal.querySelector(".prev");
+
+  const shopGalleryImages = document.querySelectorAll("#shop .gallery img");
+  let currentShopSeries = [];
+  let currentShopIndex = 0;
+
+  shopGalleryImages.forEach(img => {
+    img.addEventListener("click", () => {
+      const series = img.dataset.series;
+
+      currentShopSeries = Array.from(document.querySelectorAll(
+        `#shop .gallery img[data-series="${series}"], #hidden-shop-images img[data-series="${series}"]`
+      ));
+      currentShopIndex = currentShopSeries.indexOf(img);
+
+      shopModal.style.display = "flex";
+      shopModalImg.src = img.src;
+    });
   });
-  const modal = document.querySelector(".modal");
-const modalImg = document.getElementById("modal-img");
-const closeBtn = document.querySelector(".close");
-const nextBtn = document.querySelector(".next");
-const prevBtn = document.querySelector(".prev");
-const galleryImages = document.querySelectorAll(".gallery img");
 
-let currentIndex = 0;
-
-galleryImages.forEach(img => {
-  img.addEventListener("click", () => {
-    const series = img.dataset.series;
-
-    // teraz bierzemy wszystkie zdjęcia tej serii, w tym ukryte
-    currentSeries = Array.from(document.querySelectorAll(`.gallery img[data-series="${series}"], #hidden-images img[data-series="${series}"]`));
-
-    currentIndex = currentSeries.indexOf(img);
-    modal.style.display = "flex";
-    modalImg.src = img.src;
+  shopCloseBtn.addEventListener("click", () => shopModal.style.display = "none");
+  shopNextBtn.addEventListener("click", () => {
+    currentShopIndex = (currentShopIndex + 1) % currentShopSeries.length;
+    shopModalImg.src = currentShopSeries[currentShopIndex].src;
   });
-});
+  shopPrevBtn.addEventListener("click", () => {
+    currentShopIndex = (currentShopIndex - 1 + currentShopSeries.length) % currentShopSeries.length;
+    shopModalImg.src = currentShopSeries[currentShopIndex].src;
+  });
 
-closeBtn.addEventListener("click", () => {
-  modal.style.display = "none";
-});
+  shopModal.addEventListener("click", e => {
+    if (e.target === shopModal) shopModal.style.display = "none";
+  });
 
-nextBtn.addEventListener("click", () => {
-  currentIndex = (currentIndex + 1) % galleryImages.length;
-  modalImg.src = galleryImages[currentIndex].src;
-});
+  // =======================
+  // HERO IMAGE ROTATION
+  // =======================
+  const heroImage = document.getElementById("hero-image");
+  const interiorImages = [
+    "/images/h13_chris_cimer.jpg",
+    "/images/h14_chris_cimer.jpg"
+  ];
 
-prevBtn.addEventListener("click", () => {
-  currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-  modalImg.src = galleryImages[currentIndex].src;
-});
-// ===== HERO IMAGE ROTATION PREMIUM =====
+  let heroIndex = -1; // start po logo
 
-const heroImage = document.getElementById("hero-image");
+  setInterval(() => {
+    heroImage.style.opacity = 0;
 
-const logoImage = "/images/h12_chris_cimer.jpg";
+    setTimeout(() => {
+      heroIndex++;
+      if (heroIndex >= interiorImages.length) heroIndex = 0;
 
-const interiorImages = [
-  "/images/h13_chris_cimer.jpg",
-  "/images/h14_chris_cimer.jpg"
-  
-];
+      heroImage.src = interiorImages[heroIndex];
+      heroImage.style.opacity = 1;
+    }, 800);
+  }, 7000);
 
-let heroIndex = -1; // start po logo
-
-setInterval(() => {
-
-  heroImage.style.opacity = 0;
-
-  setTimeout(() => {
-
-    heroIndex++;
-
-    if (heroIndex >= interiorImages.length) {
-      heroIndex = 0;
-    }
-
-    heroImage.src = interiorImages[heroIndex];
-
-    heroImage.style.opacity = 1;
-
-  }, 800);
-
-}, 7000);
+  // =======================
+  // SMOOTH SCROLLING
+  // =======================
+  document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
 });
