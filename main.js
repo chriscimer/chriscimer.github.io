@@ -124,7 +124,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const heroImage = document.getElementById("hero-image");
   const interiorImages = [
     "/images/h13_chris_cimer.jpg",
-    "/images/h14_chris_cimer.jpg"
+    "/images/h14_chris_cimer.jpg",
+    "/images/h12_chris_cimer.jpg"
   ];
 
   let heroIndex = -1; // start po logo
