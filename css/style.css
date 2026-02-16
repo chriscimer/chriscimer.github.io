@@ -61,18 +61,41 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .hero img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
   transition: opacity 1.1s ease-in-out;
 }
-body.en .hero img {
-  object-fit: cover; /* albo inne dopasowanie */
-  height: 100%;
-  width: 100%;
+
+/* ================= HERO TEXT ================= */
+.hero-text {
+  max-width: 900px;
+  margin: 20px auto 60px; /* odległość od zdjęcia: top 20px, bottom 60px */
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero-text h1,
+.hero-text p {
+  margin: 0;
+  padding: 0;
+  color: #1a1a1a;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 12px; /* niewielki odstęp między h1 a paragrafem */
+}
+
+.hero-text p {
+  font-size: 1.25rem;
+  line-height: 1.4;
 }
 /* ================= SECTIONS ================= */
 section {
