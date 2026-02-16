@@ -35,7 +35,7 @@ img {
 
 .main-nav {
   display: flex;
-  gap: 30px; /* mniejsze odstępy, zmieniać wg potrzeby */
+  gap: 20px; /* mniejsze odstępy, zmieniać wg potrzeby */
   font-family: 'Inter', sans-serif;
   font-size: 18px;
   text-transform: uppercase;
@@ -46,7 +46,7 @@ img {
 .main-nav a {
   color: #222;
   text-decoration: none;
-  transition: opacity 0.3s;
+  transition: opacity 0.2s;
 }
 
 .main-nav a:hover {
