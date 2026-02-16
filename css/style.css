@@ -18,14 +18,7 @@ img {
 }
 
 /* ================= HEADER ================= */
-.site-header {
-  display: flex;
-  flex-direction: column; /* logo nad menu */
-  align-items: center;
-  padding: 40px 20px;
-  background-color: #ffffff;
-  border-bottom: none;
-}
+
 
 .logo-svg {
   height: 80px;
@@ -35,7 +28,7 @@ img {
 
 .main-nav {
   display: flex;
-  gap: 10px; /* mniejsze odstępy, zmieniać wg potrzeby */
+  gap: 7px; /* mniejsze odstępy, zmieniać wg potrzeby */
   font-family: 'Inter', sans-serif;
   font-size: 15px;
   text-transform: uppercase;
