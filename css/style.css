@@ -388,4 +388,24 @@ a[href^="#"] {
 #services {
   padding-top: 30px;
 }
+  /* ================= MOBILE HERO FIX ================= */
+
+@media (max-width: 768px) {
+
+  .hero {
+    height: auto;
+    padding: 0;
+  }
+
+  .hero img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  #services {
+    padding-top: 32px;
+  }
+
+}
 }
