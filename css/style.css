@@ -374,7 +374,7 @@ footer a:hover {
   }
 
   .portfolio-item:hover {
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 10px rgba(0,0,0,0.15);
   }
 a[href^="#"] {
   display: none !important;
@@ -386,6 +386,6 @@ a[href^="#"] {
 }
 
 #services {
-  padding-top: 32px;
+  padding-top: 30px;
 }
 }
