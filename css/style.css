@@ -181,11 +181,11 @@ section p {
 }
 
 .modal-content {
+  background-color: transparent;
   max-width: 90%;
   max-height: 90%;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
+  display: block;
+  border-radius: 8px;
 }
 
 .modal-content img {
