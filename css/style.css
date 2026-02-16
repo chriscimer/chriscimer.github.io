@@ -379,4 +379,13 @@ footer a:hover {
 a[href^="#"] {
   display: none !important;
 }
- }
+/* ================= HERO → SERVICES spacing fix ================= */
+
+.hero {
+  margin-bottom: 0;
+}
+
+#services {
+  padding-top: 32px;
+}
+}
