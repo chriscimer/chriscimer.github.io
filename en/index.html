@@ -32,12 +32,12 @@
 
 <!-- HERO -->
 <section class="hero">
-  <img src="/images/h12_chris_cimer.jpg" alt="Bespoke furniture and interior design by Chris Cimer">
+  <img src="/images/h12_chris_cimer.jpg" alt="Bespoke furniture build in workshop and fir on site. Interior Design Studio by Chris Cimer">
 </section>
 
 <!-- SERVICES -->
 <section id="services">
-  <h2>Interior Design & Premium Bespoke Furniture</h2>
+  <h2>Interior Design & Luxury Bespoke Furniture</h2>
   <p>
     Every project is unique – from furniture concepts to interior arrangements and carefully selected details. I create spaces that tell a story about you, the place, and myself. Design and concept add value to everything we create.
   </p>
@@ -50,13 +50,135 @@
     I design interiors and furniture, creating unique and functional spaces. My studio is where clients’ visions become reality, from concept to final execution. I specialize in interior design and bespoke furniture, focusing on details, quality, and craftsmanship.
   </p>
   <div class="gallery">
-    <img src="./images/kitchen classic 01 by chris cimer .png" alt="Classic Victorian London Oak Kitchen – Open Plan – Chris Cimer" data-series="kitchen01">
-    <img src="./images/02_ living room interior in a classic Victorian London townhouse_chris cimer_2.png" alt="Living Room Interior – Chris Cimer" data-series="livingroom1">
-    <img src="./images/interior_by_chris cimer_2.png" alt="Bespoke Bathroom in a Victorian London House – Chris Cimer" data-series="interior3">
-    <img src="./images/bathroom_07_by_chris_cimer.png" alt="Bespoke Bathroom in a London Victorian House – Chris Cimer" data-series="kitchen03">
-    <img src="./images/012_classic bespoke kitchen in a London Victorian townhouse_hob with cooker _chris cimer.png" alt="Bespoke Kitchen in a London Victorian Townhouse – Chris Cimer" data-series="kitchen04">
+    <img src="/images/kitchen classic 01 by chris cimer .png" alt="Classic Victorian London Oak Kitchen – Open Plan – Chris Cimer" data-series="kitchen01">
+    <img src="/images/02_ living room interior in a classic Victorian London townhouse_chris cimer_2.png" alt="Living Room Interior – Chris Cimer" data-series="livingroom1">
+    <img src="/images/interior_by_chris cimer_2.png" alt="Bespoke Bathroom in a Victorian London House – Chris Cimer" data-series="interior3">
+    <img src="/images/bathroom_07_by_chris_cimer.png" alt="Bespoke Bathroom in a London Victorian House – Chris Cimer" data-series="kitchen03">
+    <img src="/images/012_classic bespoke kitchen in a London Victorian townhouse_hob with cooker _chris cimer.png" alt="Bespoke Kitchen in a London Victorian Townhouse – Chris Cimer" data-series="kitchen04">
+ 
+  <!-- HIDDEN IMAGES (wersja angielska) -->
+<div id="hidden-images" style="display:none;">
+
+  <!-- livingroom1 -->
+  <img src="/images/02_zoom_ living room interior in a classic Victorian London townhouse_chris cimer_2.png"
+       data-series="livingroom1">
+  <img src="/images/02_ coffee table _living room interior in a classic Victorian London townhouse_chris cimer_2.png"
+       data-series="livingroom1">
+  <img src="/images/02_handle_ living room interior in a classic Victorian London townhouse_chris cimer_2.png"
+       data-series="livingroom1">
+
+  <!-- kitchen01 -->
+  <img src="/images/kitchen classic 01 by chris cimer .png"
+       data-series="kitchen01">
+  <img src="/images/kitchen classic 01a by chris cimer .png"
+       data-series="kitchen01">
+  <img src="/images/kitchen classic 01c by chris cimer .png"
+       data-series="kitchen01">
+  <img src="/images/kitchen classic 01d by chris cimer .png"
+       data-series="kitchen01">
+  <img src="/images/kitchen classic 01 moodboard by chris cimer .png"
+       data-series="kitchen01">
+
+  <!-- kitchen03 -->
+  <img src="/images/bathroom_09_by_chris_cimer.jpg"
+       data-series="kitchen03">
+  <img src="/images/bathroom_06_by_chris_cimer.png"
+       data-series="kitchen03">
+  <img src="/images/bathroom_07_by_chris_cimer.png"
+       data-series="kitchen03">
+  <img src="/images/bathroom_01a_by_chris_cimer.png"
+       data-series="kitchen03">
+
+  <!-- kitchen04 -->
+  <img src="/images/07__classic bespoke kitchen in a London Victorian townhouse_hob with cooker _chris cimer.png"
+       data-series="kitchen04">
+  <img src="/images/012_classic bespoke kitchen in a London Victorian townhouse_hob with cooker _chris cimer.png"
+       data-series="kitchen04">
+  <img src="/images/05_classic bespoke kitchen in a London Victorian townhouse_ovens with pie inside_chris cimer.png"
+       data-series="kitchen04">
+  <img src="/images/08_classic bespoke kitchen in a London Victorian townhouse_hob with cooker _chris cimer.png"
+       data-series="kitchen04">
+  <img src="/images/09_classic bespoke kitchen in a London Victorian townhouse_hob with cooker _chris cimer.png"
+       data-series="kitchen04">
+  <img src="/images/01___siedzisko_classic bespoke kitchen in a London Victorian townhouse_hob with cooker _chris cimer.png"
+       data-series="kitchen04">
+  <img src="/images/04_classic bespoke kitchen in a London Victorian townhouse_sink zoom with rose inside_chris cimer.png"
+       data-series="kitchen04">
+  <img src="/images/03_classic bespoke kitchen in a London Victorian townhouse_sink zoom_chris cimer.png"
+       data-series="kitchen04">
+  <img src="/images/07_classic bespoke kitchen in a London Victorian townhouse_hob with cooker _chris cimer.png"
+       data-series="kitchen04">
+
+  <!-- interior3 -->
+  <img src="/images/interior_by_chris cimer_2.png"
+       data-series="interior3">
+  <img src="/images/interior_by_chris cimer_2a.png"
+       data-series="interior3">
+  <img src="/images/interior_by_chris cimer_2d.png"
+       data-series="interior3">
+
   </div>
 </section>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <span class="close">&times;</span>
+  <span class="nav prev">&#10094;</span>
+  <span class="nav next">&#10095;</span>
+  <img class="modal-content" id="modal-img">
+</div>
+
+<!-- JAVASCRIPT DO MODALA -->
+<script>
+const modal = document.getElementById("modal");
+const modalImg = document.getElementById("modal-img");
+const hiddenImages = document.querySelectorAll("#hidden-images img");
+
+let currentSeries = [];
+let currentIndex = 0;
+
+// Wszystkie obrazki w galerii (thumbs lub gdziekolwiek)
+document.querySelectorAll("[data-series]").forEach(el => {
+  el.addEventListener("click", function(){
+    const series = this.getAttribute("data-series");
+
+    // Filtruj obrazy w tej samej serii
+    currentSeries = Array.from(hiddenImages)
+      .filter(img => img.getAttribute("data-series") === series);
+
+    currentIndex = 0;
+    modal.style.display = "block";
+    modalImg.src = currentSeries[currentIndex].src;
+  });
+});
+
+// Zamknij
+document.querySelector(".close").onclick = () => {
+  modal.style.display = "none";
+};
+
+// Poprzedni
+document.querySelector(".prev").onclick = () => {
+  currentIndex--;
+  if(currentIndex < 0) currentIndex = currentSeries.length - 1;
+  modalImg.src = currentSeries[currentIndex].src;
+};
+
+// Następny
+document.querySelector(".next").onclick = () => {
+  currentIndex++;
+  if(currentIndex >= currentSeries.length) currentIndex = 0;
+  modalImg.src = currentSeries[currentIndex].src;
+};
+
+// Klik w tle = zamknij
+modal.onclick = e => {
+  if(e.target === modal) modal.style.display = "none";
+};
+</script>
+  
+  
+  
 
 <!-- SHOP -->
 <section id="shop">
@@ -65,9 +187,9 @@
     Exclusive, handcrafted premium furniture designed and produced in our studio. Each piece is unique and tailored to the client’s needs.
   </p>
   <div class="gallery">
-    <img src="./images/mini_chris cimer-collection-wooden-sideboard_01_b.png" alt="Mini Wooden Sideboard – Chris Cimer" data-series="shop01">
-    <img src="./images/0HERO1 new_ sideboard_chris cimer .png" alt="Bespoke Wooden Sideboard – Chris Cimer" data-series="shop02">
-    <img src="./images/mini 01_ebbony-makasar-bespoke-wooden-sideboard-strips-by-chris cimer.png" alt="Ebony Makasar Sideboard – Chris Cimer" data-series="shop03">
+    <img src="/images/mini_chris cimer-collection-wooden-sideboard_01_b.png" alt="Mini Wooden Sideboard – Chris Cimer" data-series="shop01">
+    <img src="/images/0HERO1 new_ sideboard_chris cimer .png" alt="Bespoke Wooden Sideboard – Chris Cimer" data-series="shop02">
+    <img src="/images/mini 01_ebbony-makasar-bespoke-wooden-sideboard-strips-by-chris cimer.png" alt="Ebony Makasar Sideboard – Chris Cimer" data-series="shop03">
   </div>
 </section>
 
