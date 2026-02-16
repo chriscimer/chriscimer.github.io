@@ -75,7 +75,11 @@ img {
   object-fit: cover;
   transition: opacity 1.5s ease-in-out;
 }
-
+body.en .hero img {
+  object-fit: cover; /* albo inne dopasowanie */
+  height: 100%;
+  width: 100%;
+}
 /* ================= SECTIONS ================= */
 section {
   padding: 55px 70px;
