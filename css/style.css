@@ -116,6 +116,40 @@ section p {
   font-size: 16px;
 }
 
+
+
+/* ================= DESIGN TO PRODUCTION ================= */
+#Design-to-Production .gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 140px;
+  max-width: 980px;
+  margin: 100px auto;
+}
+
+#Design-to-Production .gallery img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+#Design-to-Productiono .gallery img:hover {
+  transform: scale(1.015);
+  opacity: 0.98;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /* ================= PORTFOLIO ================= */
 #portfolio .gallery {
   display: flex;
