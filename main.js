@@ -119,28 +119,42 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // =======================
-  // HERO IMAGE ROTATION
-  // =======================
-  const heroImage = document.getElementById("hero-image");
-  const interiorImages = [
-    "/images/h13_chris_cimer.jpg",
-    "/images/h14_chris_cimer.jpg",
-    "/images/h12_chris_cimer.jpg"
-  ];
+// HERO IMAGE ROTATION
+// =======================
+const heroImage = document.getElementById("hero-image");
+const heroSection = document.querySelector(".hero");
+const lang = heroSection?.dataset?.lang || "pl";
 
-  let heroIndex = -1; // start po logo
+const imagesPL = [
+  "/images/h13_chris_cimer.jpg",
+  "/images/h14_chris_cimer.jpg",
+  "/images/h12_chris_cimer.jpg"
+];
 
-  setInterval(() => {
-    heroImage.style.opacity = 0;
+const imagesEN = [
+  "/images/EN-CHRIS-CIMER-HERO-4.jpg",
+  "/images/EN-CHRIS-CIMER-HERO-3.jpg",
+  "/images/EN-CHRIS-CIMER-HERO-1.jpg"
+];
 
-    setTimeout(() => {
-      heroIndex++;
-      if (heroIndex >= interiorImages.length) heroIndex = 0;
+// wybierz listę zależnie od języka
+const heroImages = (lang === "en") ? imagesEN : imagesPL;
 
-      heroImage.src = interiorImages[heroIndex];
-      heroImage.style.opacity = 1;
-    }, 800);
-  }, 7000);
+let heroIndex = -1; // start po logo
+
+setInterval(() => {
+  if (!heroImage) return;
+
+  heroImage.style.opacity = 0;
+
+  setTimeout(() => {
+    heroIndex++;
+    if (heroIndex >= heroImages.length) heroIndex = 0;
+
+    heroImage.src = heroImages[heroIndex];
+    heroImage.style.opacity = 1;
+  }, 800);
+}, 7000);
 
   // =======================
   // SMOOTH SCROLLING
