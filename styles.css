@@ -279,7 +279,7 @@ h3 {
 .hero {
   position: relative;
   width: 100%;
-  min-height: 1120px;
+  min-height: 100svh;
   overflow: hidden;
   background: #c8c1b6;
   color: var(--white);
