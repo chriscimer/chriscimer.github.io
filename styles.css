@@ -489,6 +489,7 @@ h3 {
 /* =========================================================
    IMAGE STORYTELLING
 ========================================================= */
+
 .image-block {
   width: min(100%, var(--image-width));
   margin:
@@ -496,35 +497,37 @@ h3 {
     var(--image-space);
 }
 
-.image-block img {
-  width: 100%;
-  height: auto;
-  max-height: none;
-  margin: 0 auto;
-  object-fit: contain;
-  object-position: center;
-}
+/*
+  Wszystkie typy zdjęć mają teraz dokładnie tę samą szerokość.
+  Klasy pozostają w HTML, ale nie zmieniają już wymiaru zdjęcia.
+*/
 
-.image-block-full {
+.image-block-full,
+.image-block-centred,
+.image-block-detail,
+.image-block-interior {
   width: min(100%, var(--image-width));
 }
 
-.image-block-centred {
-  width: min(100%, 1240px);
+.image-block img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
 }
 
-.image-block-detail {
-  width: min(100%, 1000px);
-}
-
-.image-block-interior {
-  width: min(100%, 1180px);
-}
+/*
+  Podpis zaczyna się dokładnie od lewej krawędzi zdjęcia.
+*/
 
 .image-block figcaption {
-  max-width: 640px;
-  margin-top: 25px;
-  margin-bottom: 0;
+  width: 100%;
+  max-width: 680px;
+  margin:
+    24px
+    0
+    0;
+
   color: var(--muted);
   font-size: 0.66rem;
   font-weight: 600;
@@ -543,6 +546,7 @@ h3 {
     clamp(40px, 7vw, 120px)
     auto
     var(--image-space);
+
   text-align: center;
 }
 
@@ -556,50 +560,6 @@ h3 {
 
 .story-statement-dark {
   color: var(--white);
-}
-
-
-/* =========================================================
-   BESPOKE
-========================================================= */
-
-.bespoke {
-  display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-  gap: clamp(65px, 9vw, 165px);
-  align-items: center;
-  padding-top: var(--section-space);
-  padding-bottom: var(--section-space);
-}
-
-.bespoke-copy {
-  width: 100%;
-  max-width: 650px;
-  margin-left: auto;
-}
-
-.bespoke-copy h2 {
-  margin-bottom: 48px;
-}
-
-.bespoke-copy > p:not(.eyebrow) {
-  max-width: 550px;
-  color: var(--light-muted);
-  font-size: clamp(1rem, 1.2vw, 1.18rem);
-}
-
-.bespoke-copy .text-link {
-  margin-top: 26px;
-}
-
-.bespoke-image {
-  width: 100%;
-}
-
-.bespoke-image img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
 }
 
 
